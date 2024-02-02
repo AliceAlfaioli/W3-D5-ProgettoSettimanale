@@ -1085,6 +1085,24 @@ console.log(deleteProp(myObject, "age"));
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+function searchAndDivide(str, movies) {
+  let match = [];
+  let unmatch = [];
+  for (let i = 0; i < movies.lenght; i++) {
+    if (movies[i].Title.includes(str)) {
+      match.push(movies[i]);
+    } else {
+      unmatch.push(movies[i]);
+    }
+  }
+  return (risultato = {
+    match,
+    unmatch,
+  });
+}
+
+console.log("Ex 18 - ", searchAndDivide("Avengers", movies));
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
@@ -1120,13 +1138,40 @@ function printTdText() {
   });
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+function addRedBackgroundToLinks() {
+  const linkElements = document.querySelectorAll("a");
+
+  linkElements.forEach((link) => {
+    link.style.backgroundColor = "red";
+  });
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////7
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+
+function addNewItemToList() {
+  const newListItem = document.createElement("li");
+
+  newListItem.innerText = "Nuovo elemento";
+  const myList = document.getElementById("myList");
+
+  if (myList) {
+    myList.appendChild(newListItem);
+  } else {
+    console.log('Lista non ordinata con id "myList" non trovata.');
+  }
+}
+
+addNewItemToList();
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
@@ -1135,6 +1180,16 @@ function printTdText() {
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+function addClassToRows() {
+  const trElements = document.querySelectorAll("tr");
+
+  trElements.forEach((tr) => {
+    tr.classList.add("test");
+  });
+}
+
+addClassToRows();
 
 // [EXTRA] JS Avanzato
 
